@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projetImmobilierModelStoreContainer" CdmEntityContainer="projetImmobilierEntities">
+    <EntitySetMapping Name="ADRESSE">
+      <EntityTypeMapping TypeName="projetImmobilierModel.ADRESSE">
+        <MappingFragment StoreEntitySet="ADRESSE">
+          <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="rue" ColumnName="rue" />
+          <ScalarProperty Name="localite" ColumnName="localite" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Annonce">
+      <EntityTypeMapping TypeName="projetImmobilierModel.Annonce">
+        <MappingFragment StoreEntitySet="Annonce">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="nombrePieces" ColumnName="nombrePieces" />
+          <ScalarProperty Name="nombreSDB" ColumnName="nombreSDB" />
+          <ScalarProperty Name="surface" ColumnName="surface" />
+          <ScalarProperty Name="anneeConstruction" ColumnName="anneeConstruction" />
+          <ScalarProperty Name="inclusion" ColumnName="inclusion" />
+          <ScalarProperty Name="exclusion" ColumnName="exclusion" />
+          <ScalarProperty Name="particularite" ColumnName="particularite" />
+          <ScalarProperty Name="autresDescription" ColumnName="autresDescription" />
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BAIL">
+      <EntityTypeMapping TypeName="projetImmobilierModel.BAIL">
+        <MappingFragment StoreEntitySet="BAIL">
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+          <ScalarProperty Name="LocataireID" ColumnName="LocataireID" />
+          <ScalarProperty Name="Date_Debut" ColumnName="Date_Debut" />
+          <ScalarProperty Name="Date_Fin" ColumnName="Date_Fin" />
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIENIMMOBILIER">
+      <EntityTypeMapping TypeName="projetImmobilierModel.BIENIMMOBILIER">
+        <MappingFragment StoreEntitySet="BIENIMMOBILIER">
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+          <ScalarProperty Name="Type_BIENIMMOBILIER" ColumnName="Type_BIENIMMOBILIER" />
+          <ScalarProperty Name="Prix_loyer" ColumnName="Prix_loyer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="projetImmobilierModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="courriel" ColumnName="courriel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employe">
+      <EntityTypeMapping TypeName="projetImmobilierModel.Employe">
+        <MappingFragment StoreEntitySet="Employe">
+          <ScalarProperty Name="EmployeID" ColumnName="EmployeID" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="Departement" ColumnName="Departement" />
+          <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+          <ScalarProperty Name="NAS" ColumnName="NAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGE">
+      <EntityTypeMapping TypeName="projetImmobilierModel.IMAGE">
+        <MappingFragment StoreEntitySet="IMAGE">
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMMEUBLE">
+      <EntityTypeMapping TypeName="projetImmobilierModel.IMMEUBLE">
+        <MappingFragment StoreEntitySet="IMMEUBLE">
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+          <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="Type_Immeuble" ColumnName="Type_Immeuble" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locataire">
+      <EntityTypeMapping TypeName="projetImmobilierModel.Locataire">
+        <MappingFragment StoreEntitySet="Locataire">
+          <ScalarProperty Name="LocataireID" ColumnName="LocataireID" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Courriel" ColumnName="Courriel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="utilisateur">
+      <EntityTypeMapping TypeName="projetImmobilierModel.utilisateur">
+        <MappingFragment StoreEntitySet="utilisateur">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomUtilisateur" ColumnName="nomUtilisateur" />
+          <ScalarProperty Name="courriel" ColumnName="courriel" />
+          <ScalarProperty Name="motDePasse" ColumnName="motDePasse" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="EmployeID" ColumnName="EmployeID" />
+          <ScalarProperty Name="LocataireID" ColumnName="LocataireID" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visite">
+      <EntityTypeMapping TypeName="projetImmobilierModel.Visite">
+        <MappingFragment StoreEntitySet="Visite">
+          <ScalarProperty Name="DateVisite" ColumnName="DateVisite" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+          <ScalarProperty Name="EmployeID" ColumnName="EmployeID" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getListeAnnonce" FunctionName="projetImmobilierModel.Store.getListeAnnonce">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="projetImmobilierModel.getListeAnnonce_Result">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="titre" ColumnName="titre" />
+          <ScalarProperty Name="nombrePieces" ColumnName="nombrePieces" />
+          <ScalarProperty Name="nombreSDB" ColumnName="nombreSDB" />
+          <ScalarProperty Name="surface" ColumnName="surface" />
+          <ScalarProperty Name="anneeConstruction" ColumnName="anneeConstruction" />
+          <ScalarProperty Name="inclusion" ColumnName="inclusion" />
+          <ScalarProperty Name="exclusion" ColumnName="exclusion" />
+          <ScalarProperty Name="particularite" ColumnName="particularite" />
+          <ScalarProperty Name="autresDescription" ColumnName="autresDescription" />
+          <ScalarProperty Name="BIENID" ColumnName="BIENID" />
+          <ScalarProperty Name="ImmeubleID" ColumnName="ImmeubleID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

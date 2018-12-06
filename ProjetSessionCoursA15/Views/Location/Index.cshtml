@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ProjetSessionCoursA15.Models.Annonce>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePieces)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreSDB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surface)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anneeConstruction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inclusion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exclusion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.particularite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autresDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BIENIMMOBILIER.Type_BIENIMMOBILIER)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrePieces)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreSDB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surface)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anneeConstruction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inclusion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.exclusion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.particularite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autresDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BIENIMMOBILIER.Type_BIENIMMOBILIER)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.numero }) |
+            @Html.ActionLink("Details", "Details", new { id=item.numero }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.numero })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjetImmobilierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADRESSE">
+    <Key>
+      <PropertyRef Name="codePostal" />
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="codePostal" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="rue" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="localite" Type="nvarchar" MaxLength="20" />
+    <Property Name="ville" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Annonce">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="titre" Type="nvarchar" MaxLength="60" />
+    <Property Name="nombrePieces" Type="int" />
+    <Property Name="nombreSDB" Type="int" />
+    <Property Name="surface" Type="int" />
+    <Property Name="anneeConstruction" Type="date" />
+    <Property Name="inclusion" Type="nvarchar" MaxLength="200" />
+    <Property Name="exclusion" Type="nvarchar" MaxLength="200" />
+    <Property Name="particularite" Type="nvarchar" MaxLength="200" />
+    <Property Name="autresDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="BIENID" Type="int" />
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BAIL">
+    <Key>
+      <PropertyRef Name="ImmeubleID" />
+      <PropertyRef Name="LocataireID" />
+      <PropertyRef Name="Date_Debut" />
+    </Key>
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LocataireID" Type="int" Nullable="false" />
+    <Property Name="Date_Debut" Type="date" Nullable="false" />
+    <Property Name="Date_Fin" Type="date" />
+    <Property Name="BIENID" Type="int" />
+  </EntityType>
+  <EntityType Name="BIENIMMOBILIER">
+    <Key>
+      <PropertyRef Name="BIENID" />
+      <PropertyRef Name="ImmeubleID" />
+    </Key>
+    <Property Name="BIENID" Type="int" Nullable="false" />
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type_BIENIMMOBILIER" Type="nvarchar" MaxLength="20" />
+    <Property Name="Prix_loyer" Type="float" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nom" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="prenom" Type="nvarchar" MaxLength="60" />
+    <Property Name="telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="courriel" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="EmployeID" />
+    </Key>
+    <Property Name="EmployeID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="nom" Type="nvarchar" MaxLength="20" />
+    <Property Name="prenom" Type="nvarchar" MaxLength="30" />
+    <Property Name="Departement" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fonction" Type="nvarchar" MaxLength="20" />
+    <Property Name="NAS" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="IMAGE">
+    <Key>
+      <PropertyRef Name="ImmeubleID" />
+      <PropertyRef Name="BIENID" />
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BIENID" Type="int" Nullable="false" />
+    <Property Name="ImageID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IMMEUBLE">
+    <Key>
+      <PropertyRef Name="ImmeubleID" />
+    </Key>
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="codePostal" Type="nvarchar" MaxLength="10" />
+    <Property Name="numero" Type="int" />
+    <Property Name="Type_Immeuble" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Locataire">
+    <Key>
+      <PropertyRef Name="LocataireID" />
+    </Key>
+    <Property Name="LocataireID" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="20" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="40" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Courriel" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="utilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="courriel" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomUtilisateur" Type="nvarchar" MaxLength="20" />
+    <Property Name="courriel" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="motDePasse" Type="nvarchar" MaxLength="20" />
+    <Property Name="photo" Type="int" />
+    <Property Name="EmployeID" Type="nvarchar" MaxLength="5" />
+    <Property Name="LocataireID" Type="int" />
+    <Property Name="clientID" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Visite">
+    <Key>
+      <PropertyRef Name="DateVisite" />
+    </Key>
+    <Property Name="DateVisite" Type="date" Nullable="false" />
+    <Property Name="clientID" Type="nvarchar" MaxLength="10" />
+    <Property Name="BIENID" Type="int" />
+    <Property Name="ImmeubleID" Type="nvarchar" MaxLength="10" />
+    <Property Name="EmployeID" Type="nvarchar" MaxLength="5" />
+    <Property Name="nom" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Annonce__36B12243">
+    <End Role="BIENIMMOBILIER" Type="Self.BIENIMMOBILIER" Multiplicity="0..1" />
+    <End Role="Annonce" Type="Self.Annonce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BIENIMMOBILIER">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="Annonce">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BAIL__2D27B809">
+    <End Role="BIENIMMOBILIER" Type="Self.BIENIMMOBILIER" Multiplicity="0..1" />
+    <End Role="BAIL" Type="Self.BAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BIENIMMOBILIER">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="BAIL">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BAIL__LocataireI__2E1BDC42">
+    <End Role="Locataire" Type="Self.Locataire" Multiplicity="1" />
+    <End Role="BAIL" Type="Self.BAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locataire">
+        <PropertyRef Name="LocataireID" />
+      </Principal>
+      <Dependent Role="BAIL">
+        <PropertyRef Name="LocataireID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BIENIMMOB__Immeu__286302EC">
+    <End Role="IMMEUBLE" Type="Self.IMMEUBLE" Multiplicity="1" />
+    <End Role="BIENIMMOBILIER" Type="Self.BIENIMMOBILIER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMMEUBLE">
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="BIENIMMOBILIER">
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IMAGE__30F848ED">
+    <End Role="BIENIMMOBILIER" Type="Self.BIENIMMOBILIER" Multiplicity="1" />
+    <End Role="IMAGE" Type="Self.IMAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BIENIMMOBILIER">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="IMAGE">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IMAGE__ImmeubleI__31EC6D26">
+    <End Role="IMMEUBLE" Type="Self.IMMEUBLE" Multiplicity="1" />
+    <End Role="IMAGE" Type="Self.IMAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMMEUBLE">
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="IMAGE">
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IMMEUBLE__25869641">
+    <End Role="ADRESSE" Type="Self.ADRESSE" Multiplicity="0..1" />
+    <End Role="IMMEUBLE" Type="Self.IMMEUBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADRESSE">
+        <PropertyRef Name="codePostal" />
+        <PropertyRef Name="numero" />
+      </Principal>
+      <Dependent Role="IMMEUBLE">
+        <PropertyRef Name="codePostal" />
+        <PropertyRef Name="numero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__utilisate__clien__3B75D760">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__utilisate__Emplo__3C69FB99">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="0..1" />
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="EmployeID" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="EmployeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__utilisate__Locat__3D5E1FD2">
+    <End Role="Locataire" Type="Self.Locataire" Multiplicity="0..1" />
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locataire">
+        <PropertyRef Name="LocataireID" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="LocataireID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visite__403A8C7D">
+    <End Role="BIENIMMOBILIER" Type="Self.BIENIMMOBILIER" Multiplicity="0..1" />
+    <End Role="Visite" Type="Self.Visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BIENIMMOBILIER">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Principal>
+      <Dependent Role="Visite">
+        <PropertyRef Name="BIENID" />
+        <PropertyRef Name="ImmeubleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visite__clientID__412EB0B6">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Visite" Type="Self.Visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="Visite">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visite__EmployeI__4222D4EF">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="0..1" />
+    <End Role="Visite" Type="Self.Visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="EmployeID" />
+      </Principal>
+      <Dependent Role="Visite">
+        <PropertyRef Name="EmployeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="getListeAnnoncee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ProjetImmobilierModelStoreContainer">
+    <EntitySet Name="ADRESSE" EntityType="Self.ADRESSE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Annonce" EntityType="Self.Annonce" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BAIL" EntityType="Self.BAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BIENIMMOBILIER" EntityType="Self.BIENIMMOBILIER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMAGE" EntityType="Self.IMAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMMEUBLE" EntityType="Self.IMMEUBLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locataire" EntityType="Self.Locataire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="utilisateur" EntityType="Self.utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visite" EntityType="Self.Visite" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Annonce__36B12243" Association="Self.FK__Annonce__36B12243">
+      <End Role="BIENIMMOBILIER" EntitySet="BIENIMMOBILIER" />
+      <End Role="Annonce" EntitySet="Annonce" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BAIL__2D27B809" Association="Self.FK__BAIL__2D27B809">
+      <End Role="BIENIMMOBILIER" EntitySet="BIENIMMOBILIER" />
+      <End Role="BAIL" EntitySet="BAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BAIL__LocataireI__2E1BDC42" Association="Self.FK__BAIL__LocataireI__2E1BDC42">
+      <End Role="Locataire" EntitySet="Locataire" />
+      <End Role="BAIL" EntitySet="BAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BIENIMMOB__Immeu__286302EC" Association="Self.FK__BIENIMMOB__Immeu__286302EC">
+      <End Role="IMMEUBLE" EntitySet="IMMEUBLE" />
+      <End Role="BIENIMMOBILIER" EntitySet="BIENIMMOBILIER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IMAGE__30F848ED" Association="Self.FK__IMAGE__30F848ED">
+      <End Role="BIENIMMOBILIER" EntitySet="BIENIMMOBILIER" />
+      <End Role="IMAGE" EntitySet="IMAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IMAGE__ImmeubleI__31EC6D26" Association="Self.FK__IMAGE__ImmeubleI__31EC6D26">
+      <End Role="IMMEUBLE" EntitySet="IMMEUBLE" />
+      <End Role="IMAGE" EntitySet="IMAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IMMEUBLE__25869641" Association="Self.FK__IMMEUBLE__25869641">
+      <End Role="ADRESSE" EntitySet="ADRESSE" />
+      <End Role="IMMEUBLE" EntitySet="IMMEUBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__utilisate__clien__3B75D760" Association="Self.FK__utilisate__clien__3B75D760">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__utilisate__Emplo__3C69FB99" Association="Self.FK__utilisate__Emplo__3C69FB99">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__utilisate__Locat__3D5E1FD2" Association="Self.FK__utilisate__Locat__3D5E1FD2">
+      <End Role="Locataire" EntitySet="Locataire" />
+      <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visite__403A8C7D" Association="Self.FK__Visite__403A8C7D">
+      <End Role="BIENIMMOBILIER" EntitySet="BIENIMMOBILIER" />
+      <End Role="Visite" EntitySet="Visite" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visite__clientID__412EB0B6" Association="Self.FK__Visite__clientID__412EB0B6">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Visite" EntitySet="Visite" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visite__EmployeI__4222D4EF" Association="Self.FK__Visite__EmployeI__4222D4EF">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Visite" EntitySet="Visite" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
