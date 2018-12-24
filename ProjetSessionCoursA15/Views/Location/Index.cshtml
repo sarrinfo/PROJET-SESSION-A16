@@ -3,79 +3,54 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.titre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombrePieces)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombreSDB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.surface)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.anneeConstruction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.inclusion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.exclusion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.particularite)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.autresDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BIENIMMOBILIER.Type_BIENIMMOBILIER)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.titre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombrePieces)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombreSDB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.surface)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.anneeConstruction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.inclusion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.exclusion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.particularite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.autresDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BIENIMMOBILIER.Type_BIENIMMOBILIER)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.numero }) |
-            @Html.ActionLink("Details", "Details", new { id=item.numero }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.numero })
-        </td>
-    </tr>
-}
+      
+<div class="container">
+    @foreach (var item in Model)
+    {
 
-</table>
+    <div style="background-color:gainsboro; color : black" class="row btn-success">
+        <div class="col-sm-3 left ">
+            <div class="col-sm-3">
+                <a href="/Location/Details/@Html.DisplayFor(modelItem => item.BIENIMMOBILIER.BienID)">
+                    <img style="width: 250px; height: 175px" src="@item.Photos" alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-10">
+                    <p style="font-weight:bold" >@Html.DisplayFor(modelItem => item.Titre)</p>
+                </div>
+                <div class="col-sm-2 pull-right">
+                    <p style="font-weight:bold">@Html.DisplayFor(modelItem => item.BIENIMMOBILIER.Prix_loyer) $</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                secteur 
+                (Montreal)
+            </div>
+            <div class="row">
+                <p>@Html.DisplayFor(modelItem => item.BIENIMMOBILIER.Type_BIENIMMOBILIER) </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <p> @Html.DisplayFor(modelItem => item.AutresDescription)</p>
+                </div>
+                <div class="col-sm-3 pull-right">
+                    <img style="width: 40px; height: 40px" src="~/Content/icones/icon_cac_26x26.png" alt="" />
+                    @Html.DisplayFor(modelItem => item.NombrePieces)
+                    <img style="width: 40px; height: 40px" src="~/Content/icones/icon_sdb_26x26.png" alt="" />
+                    @Html.DisplayFor(modelItem => item.NombreSDB)
+                </div>
+              
+            </div>
+        </div>
+    </div>
+                 
+     }
+</div>
+
+
+

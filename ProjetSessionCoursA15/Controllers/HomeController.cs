@@ -4,16 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjetSessionCoursA15.Controllers
+namespace ProjetSessionA16.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         // GET: Home/Details/5
         public ActionResult Details(int id)
         {

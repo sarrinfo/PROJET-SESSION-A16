@@ -1,114 +1,183 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="javaScript/script1.js"></script>
-    <title>Acceuil</title>
-</head>
-<body>
-    <div class="container">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-                <li data-target="#demo" data-slide-to="3"></li>
-                <li data-target="#demo" data-slide-to="4"></li>
-                <li data-target="#demo" data-slide-to="5"></li>
-                <li data-target="#demo" data-slide-to="6"></li>
-                <li data-target="#demo" data-slide-to="7"></li>
-                <li data-target="#demo" data-slide-to="8"></li>
-                <li data-target="#demo" data-slide-to="9"></li>
-            </ul>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="image" src="~/Content/Images/image0.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>LOUER UN APPARTEMENT</h3>
-                        <p>sacre coeur 3</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image1.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <a href="WEB-INF/displayListMaison.jsp"></a>
-                        <h3>MAISON A VENDRE</h3>
-                        <p>Almadies bord de la mer</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image2.jpg" alt="image2">
-                    <div class="carousel-caption">
-                        <h3>CHANTIER PAS A PAS</h3>
-                        <p>suivre son évolution en temps réel</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image3.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>LOUER UN APPARTEMENT</h3>
-                        <p>sacre coeur 3</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image4.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>MAISON A VENDRE</h3>
-                        <p>Almadies bord de la mer</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image5.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>CHANTIER PAS A PAS</h3>
-                        <p>suivre son évolution en temps réel</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image6.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>LOUER UN APPARTEMENT</h3>
-                        <p>sacre coeur 3</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image7.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>MAISON A VENDRE</h3>
-                        <p>Almadies bord de la mer</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image8.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>CHANTIER PAS A PAS</h3>
-                        <p>suivre son évolution en temps réel</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="image" src="~/Content/Images/image9.jpg" alt=" ">
-                    <div class="carousel-caption">
-                        <h3>CHANTIER PAS A PAS</h3>
-                        <p>suivre son évolution en temps réel</p>
-                    </div>
-                </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/Content/Images/image0.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
             </div>
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image1.jpg"  alt="Visual Studio" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Acheter un villa F5 au bord de la mere.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image2.jpg"  alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Une livraison cle a main dans les delais prevus.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image3.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image4.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image5.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image6.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image7.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image8.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/image9.jpg"  alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Louer une maison au coeur de DAKAR-PLATEAU.
+                    <a class="btn btn-default" href="http://legroupebaobab.com:8080/immobilier">
+                        savoir plus
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
-</body>
-</html>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 
+<div class="row">
+    <div class="col-md-3">
+        <h3>Groupe Baobab</h3>
+        <ul>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Baobab Immobilier</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Baobab Import-Export</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Baobab Finance</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Baobab Conseil</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Baobab Automobile</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Baobab Immo</h3>
+        <ul>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">Notre vision</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">Notre equipe</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Carriere</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">Nous trouver</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Nos Agences</h3>
+        <ul>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence VDN</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence Mariste</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence DAKAR-PLATEAU</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence Malick SY (Thies)</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence Keur Souf (Saint Louis)</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence La rive (Mbour)</a></li>
+            <li><a href="http://legroupebaobab.com:8080/immobilier">Agence Le standing (Kaolack)</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Nos Partenaires</h3>
+        <ul>
+            <li><a href="https://baobab.bz/">Holding Baobab</a></li>
+            <li><a href="https://www.banqueatlantique.net/sen/">Banque Atlantique</a></li>
+            <li><a href="https://www.bicis.sn/">BICIS</a></li>
+            <li><a href="https://societegenerale.sn/">SGBS</a></li>
+            <li><a href="https://www.ecobank.com/personal-banking">Ecobank</a></li>
+        </ul>
+    </div>
+</div>

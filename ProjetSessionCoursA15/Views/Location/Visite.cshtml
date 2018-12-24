@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjetSessionCoursA15.Models.Visite>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Datevisite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLOYE.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BienImmobilierBienId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datevisite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLOYE.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLOYE.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BienImmobilierBienId)
+        </td>
+        <td>
+            @Html.ActionLink("Add to list visit", "Index", new { id = item.Id }) |
+        </td>
+    </tr>
+    }
+
+</table>
+

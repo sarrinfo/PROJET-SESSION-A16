@@ -1,0 +1,79 @@
+﻿@model ProjetSessionCoursA15.Models.BienImmobilier
+<div class="row  text-left">
+    <h1> @Html.DisplayFor(model => model.Type_BIENIMMOBILIER)</h1>
+    @Html.DisplayFor(model => model.IMMEUBLE.ADDRESSE.Numero),
+
+    @Html.DisplayFor(model => model.IMMEUBLE.ADDRESSE.Rue)<br />
+
+    @Html.DisplayFor(model => model.IMMEUBLE.ADDRESSE.Localite)
+    (@Html.DisplayFor(model => model.IMMEUBLE.ADDRESSE.Ville))
+    @Html.DisplayFor(model => model.IMMEUBLE.ADDRESSE.CodePostal)
+
+</div>
+    <div class="row">
+        <div class="col-sm-8 ">
+            <img style="width: 675px; height: 400px" src="@Model.IMMEUBLE.Photos" alt="no image" class="img-responsive" />
+        </div>
+
+        <div class="col-sm-4 ">
+            <div class="row">
+                <hr />
+
+                <h4>
+                    @Html.DisplayFor(model => model.Prix_loyer) $
+                </h4>
+            </div>
+            <div class="row">
+                <hr />
+
+                <p>
+                    Immeuble
+                    @Html.DisplayFor(model => model.IMMEUBLE.Type_Immeuble)
+                </p>
+
+
+                <p>
+                    Annee construction :
+                    @Html.DisplayFor(model => model.IMMEUBLE.AnneeConstruction)
+                </p>
+
+            </div>
+
+            <div class="row">
+                <hr />
+        
+                    @Html.ActionLink("Prendre rendez vous", "Visite", new { id = Model.BienID })
+
+              
+                    @*@Html.ActionLink("Prendre rendez vous", "Index", "Location", new { area = "" }, new { @class = "navbar-brand" })*@
+
+                    @*<button type="button" style="background-color: darkgray" class="btn-success">
+
+            @* @Html.ActionLink("Prendre rendez vous", "Visit", "Index", new { id = Model.BienID })*@
+
+                    @*</button>*@
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <p>
+            Hello
+        <p>
+    </div>
+    <hr />
+    <div class="row">
+
+        @foreach (var item in Model.IMAGES)
+        {
+            <div class="col-sm-2">
+                <img style="width: 250px; height: 175px" src="@item.Url" alt="no image" class="img-responsive" />
+            </div>
+        }
+
+    </div>

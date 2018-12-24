@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjetSessionCoursA15.Controllers
+namespace ProjetSessionA16.Controllers
 {
     public class SearchController : Controller
     {
